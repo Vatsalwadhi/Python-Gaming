@@ -1,3 +1,12 @@
+def is_board_filled(board):
+    for row in board:
+        if 0 in row:
+            return False
+    return True
+
+def is_valid_move(board, row, col, num):
+    return True
+
 def print_board_with_blanks(board, original_board):
     for i in range(9):
         if i % 3 == 0 and i != 0:
@@ -16,7 +25,7 @@ def print_board_with_blanks(board, original_board):
 
 def sudoku_game():
     print("Welcome to Sudoku Game")
-    a=int(input("On a Scale of 1 to 5, what level of sudoku you want solve: "))
+    a = int(input("On a Scale of 1 to 5, what level of sudoku you want to solve: "))
     puzzle1 = [
         [5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
@@ -40,7 +49,6 @@ def sudoku_game():
         [8, 0, 0, 9, 0, 4, 2, 0, 0],
         [0, 1, 0, 0, 0, 0, 0, 0, 0]
     ]
-
     puzzle3 = [
         [0, 4, 0, 0, 5, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 1, 8, 0, 2],
@@ -77,15 +85,15 @@ def sudoku_game():
         [0, 0, 0, 0, 7, 0, 0, 0, 0]
     ]
     if a == 1:
-      puzzle = puzzle1
+        puzzle = puzzle1
     elif a == 2:
-      puzzle = puzzle2
+        puzzle = puzzle2
     elif a == 3:
-      puzzle = puzzle3
+        puzzle = puzzle3
     elif a == 4:
-      puzzle = puzzle4
+        puzzle = puzzle4
     else:
-      puzzle = puzzle5
+        puzzle = puzzle5
 
     user_board = [row[:] for row in puzzle]
 
